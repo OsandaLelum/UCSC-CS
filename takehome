@@ -1,0 +1,89 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+printf("----------------------------\n");	
+printf("----Take Home Assignment----\n");
+printf("----------------------------\n");
+
+	// NoOfTc-->  number of test cases
+int NoOfTc;
+int t1=1;   
+   printf("Insert the nummber of test case: ");
+   scanf("%d",&NoOfTc);
+
+while(t1<=NoOfTc){           
+       //noOfshelve--> Number of Shevles
+	int NoOfShelve;
+	printf("Insert the number of Shelves :");
+	scanf("%d",&NoOfShelve);
+		
+	int noOfbooksInShlve[NoOfShelve]; 
+	int t2=1;
+	printf("Insert the number of books in each shelves:");
+	while(t2<=NoOfShelve){
+		 // Inserting the number of books in each shevles
+		scanf("%d",&noOfbooksInShlve[t2-1]);
+		t2++;
+	}
+		
+	int NoOfQurry;
+	printf("Insert the number of queary :");
+	scanf("%d",&NoOfQurry);//Getting the number of quarry
+	int t3=1;
+		
+	while(t3<=NoOfQurry){ 
+        // Loop that run through a quarry 
+		int qurryType;
+		int x,k,y;
+		
+		printf("Insert the queary: ");
+		scanf("%d",&qurryType);
+			
+		if(qurryType==1){
+            
+            //Sorting the quarry (Type 2- Starting from 1)
+			scanf("%d %d",&x,&y);
+			noOfbooksInShlve[x-1]=y;
+		} 
+		else if(qurryType==0){
+
+            //Sorting the quarry (Type 1- Starting from 0)
+			scanf("%d %d %d",&x,&y,&k);
+			int size=y-x+1;
+			int arr[size];
+			int t4=1,t5=0; //( Sorting the array)
+			while(t4<=NoOfShelve){
+				if(t4>=x && t4<=y){
+					arr[t5]=noOfbooksInShlve[t4-1];
+					t5++;
+				}
+				else if(t4>y){
+					break;
+				}
+				t4++;
+			}
+			int t6=0,t7;
+				
+			for(t6=0;t6<size;t6++){
+				for(t7=t6;t7<size;t7++){
+					if(arr[t6]>arr[t7]){
+						int t8=arr[t6];
+						arr[t6]=arr[t7];
+						arr[t7]=t8;
+					}
+				}
+			}
+                       //displaying the quarry result
+
+
+				printf(" Result for quarry: %d \n ",arr[k-1]);	
+		}
+
+			t3++;
+
+	}
+		t1++;	
+	
+}
+
+}
