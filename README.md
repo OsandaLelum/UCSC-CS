@@ -9,7 +9,7 @@ Matches given pattern with multiple single character(```_```) wild cards using n
 Naive algorithm is used because of simplicity of the problem. Thus algorithms such as Karp/Rabin algorithm adds unnecessary complexity and needs rehashing for already hashed letters in order to match wildcards.
 
 
-
+##   how to run
 ### How to run
 
 Move to ```question1``` directory, compile and run Wildcard.java with arguments
